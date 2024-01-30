@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('types', function (Blueprint $table) {
             $table->id();
-            $table->enum('name', ['web-app', 'api']);
+            $table->enum('name', ['web-app', 'api', 'not specified']);
             $table->string('slug')->unique();
             $table->timestamps();
         });

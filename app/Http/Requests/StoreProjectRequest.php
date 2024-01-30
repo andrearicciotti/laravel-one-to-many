@@ -26,7 +26,8 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title' => ['required', 'min:8', 'max:150', Rule::unique('projects')->ignore($this->project)],
-            'description' => 'required|min:20|max:500',
+            'description' => ['required', 'min:20', 'max:500'],
+            'type_id' => ['required', 'integer'],
         ];
     }
 

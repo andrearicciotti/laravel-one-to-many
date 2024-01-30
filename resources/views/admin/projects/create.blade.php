@@ -22,6 +22,14 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Type</label>
+                <select name="type_id" id="type">
+                    <option value="3"></option>
+                    <option value="1">web-app</option>
+                    <option value="2">api</option>
+                </select>
+            </div>
             
             <button type="submit" class="btn btn-success">Save</button>
     
