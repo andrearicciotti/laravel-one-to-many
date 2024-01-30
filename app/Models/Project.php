@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+
 class Project extends Model
 {
     use HasFactory;
@@ -22,6 +23,6 @@ class Project extends Model
 
     public function type() 
     {
-        return $this->belongTo(Type::class);
+        return $this->belongsTo(Type::class);
     }
 }

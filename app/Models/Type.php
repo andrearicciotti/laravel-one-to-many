@@ -9,9 +9,9 @@ class Type extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'slug'];
 
-    public function project() 
+    public function projects() 
     {
         return $this->hasMany(Project::class);
     }

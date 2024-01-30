@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Project;
+use App\Models\Type;
 
-class DeletedProjectController extends Controller
+class TypeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class DeletedProjectController extends Controller
      */
     public function index()
     {
-        $projects_deleted = Project::onlyTrashed()->get();
-        return view('admin.deletedProjects.index', compact('projects_deleted'));
+        $types = Type::all();
+        return view('admin.types.index', compact('types'));
     }
 
     /**
@@ -43,12 +43,12 @@ class DeletedProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Type $type
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Type $type)
     {
-        //
+        return view('admin.types.show', compact('type'));
     }
 
     /**
